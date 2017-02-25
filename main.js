@@ -1,8 +1,9 @@
 'use strict'
-const app = require('app')
-const BrowserWindow = require('browser-window')
+const electron = require('electron');
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
 
-require('crash-reporter').start()
+//require('crash-reporter').start()
 
 let mainWindow = null
 
@@ -11,8 +12,7 @@ app.on('window-all-closed', function () {
 })
 
 app.on('ready', function () {
-  const Screen = require('screen')
-
+  const Screen = electron.screen;
   const size = Screen.getPrimaryDisplay().size
 
   mainWindow = new BrowserWindow({
@@ -29,7 +29,7 @@ app.on('ready', function () {
 
   mainWindow.maximize()
 
-  mainWindow.loadUrl(`file://${__dirname}/index.html`)
+  mainWindow.loadURL(`file://${__dirname}/index.html`)
   mainWindow.on('closed', function () {
     mainWindow = null
   })
