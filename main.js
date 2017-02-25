@@ -24,9 +24,8 @@ app.on('ready', function () {
     show: true,
     transparent: true,
     resizable: false,
-    'always-on-top': true
+    alwaysOnTop: true
   })
-
   mainWindow.maximize()
 
   mainWindow.loadURL(`file://${__dirname}/index.html`)
