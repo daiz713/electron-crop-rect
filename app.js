@@ -67,7 +67,7 @@ const App = React.createClass({
           key: 'cursor',
           style: { left: self.state.x, top: self.state.y }
         },
-        React.DOM.div({ className: 'indicator'}, `${self.state.x}\n${self.state.y}`)
+        React.DOM.div({ className: 'indicator'}, '')//`${self.state.x}\n${self.state.y}`)
       )
     ])
   }
